@@ -16,7 +16,7 @@ function Set-SecureDuoSecretKey{
         
         [Parameter(Mandatory)]       
         [ValidateNotNull()]
-        $Credential = [System.Management.Automation.PSCredential]::Empty
+        [string]$SecretKey
     )
 
     return (ConvertFrom-SecureString -SecureString (Read-Host -AsSecureString -Prompt "PlainText Secret Key"))
